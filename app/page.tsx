@@ -173,7 +173,7 @@ export default function Home() {
                       unfurls infinite horizons yet simultaneously presents
                       complexities of an unprecedented scale. We saw enterprises
                       charting these new AI waters with a mix of aspiration and
-                      apprehension, and we felt the silent ache of AI's
+                      apprehension, and we felt the silent ache of AI&apos;s
                       transformative power remaining partially latent, its full
                       symphony yet to be conducted. It was then we resolved to
                       become that <strong>vital nexus</strong>.
@@ -206,10 +206,10 @@ export default function Home() {
 
                     <p>
                       We stand at the threshold of discovery, eager to explore
-                      the uncharted territories of "what if" alongside you, to
-                      co-author a future that is not only more intelligent, but
-                      more intuitive, more empathetic, and ultimately, more{" "}
-                      <strong>profoundly human</strong>.
+                      the uncharted territories of &ldquo;what if&rdquo;
+                      alongside you, to co-author a future that is not only more
+                      intelligent, but more intuitive, more empathetic, and
+                      ultimately, more <strong>profoundly human</strong>.
                     </p>
 
                     <p className="text-right font-semibold text-gray-800 pt-4">
