@@ -1,103 +1,242 @@
+"use client";
+
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  return (
+    <div className="min-h-screen bg-stone-100 relative overflow-hidden">
+      {/* Main Content */}
+      <div className="flex flex-col items-center justify-center min-h-screen px-8">
+        {/* Company Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-2xl md:text-3xl font-mono text-gray-800 mb-16 tracking-wider"
+        >
+          Vector Parallel, Inc
+        </motion.h1>
+
+        {/* Logo Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="flex flex-col items-center mb-20"
+        >
+          <div className="w-96 h-28 mb-6">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/logo.svg"
+              alt="Vector Parallel Logo"
+              width={391}
+              height={116}
+              className="w-full h-full object-contain"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg font-mono text-gray-700 tracking-wide"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            Bit.wise()
+          </motion.p>
+        </motion.div>
+
+        {/* About Us Button */}
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          onClick={() => setIsDrawerOpen(true)}
+          className="group relative px-8 py-3 border-2 border-gray-800 rounded-full 
+                     font-mono text-gray-800 tracking-wider hover:bg-gray-800 
+                     hover:text-stone-100 transition-all duration-300 ease-in-out
+                     transform hover:scale-105"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <span className="flex items-center gap-3">
+            LearnAbout(us)
+            <motion.span
+              className="text-xl"
+              animate={{ x: [0, 5, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              ⇒
+            </motion.span>
+            About Us
+          </span>
+        </motion.button>
+
+        {/* Footer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="absolute bottom-8 text-center space-y-2"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <p className="text-sm font-mono text-gray-600 tracking-wide">
+            1800 Wazee Street Denver CO 80202 United States
+          </p>
+          <p className="text-xs font-mono text-gray-500 tracking-wider">
+            © {new Date().getFullYear()} Vector Parallel, Inc.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Side Drawer */}
+      <AnimatePresence>
+        {isDrawerOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsDrawerOpen(false)}
+              className="fixed inset-0 bg-black bg-opacity-30 z-40"
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{
+                type: "spring",
+                damping: 25,
+                stiffness: 200,
+                duration: 0.5,
+              }}
+              className="fixed right-0 top-0 h-full w-1/3 min-w-[400px] max-w-[600px] bg-white shadow-2xl z-50 
+                         flex flex-col border-l border-gray-200"
+            >
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <h2 className="text-xl font-mono text-gray-800 tracking-wider">
+                  About Us
+                </h2>
+                <button
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors duration-200"
+                >
+                  <svg
+                    className="w-6 h-6 text-gray-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Drawer Content */}
+              <div className="flex-1 p-6 overflow-y-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="space-y-6"
+                >
+                  <div className="space-y-4 text-gray-700 font-mono text-sm leading-relaxed">
+                    <p className="font-semibold text-gray-800">
+                      <strong>To Our Future Architects of Tomorrow,</strong>
+                    </p>
+
+                    <p>
+                      In an era pulsating with marvel and kinetic energy, we at{" "}
+                      <strong>Vector Parallel</strong> reach out to share the
+                      chronicle of our journey, the constellation of our dreams,
+                      and the blueprint of our shared future. Our odyssey began
+                      with a vision, at once elegantly simple and profoundly
+                      ambitious: to be the <strong>seamless catalyst</strong>,
+                      the <strong>intuitive conduit</strong> forging an
+                      effortless bond between the enterprise and the boundless
+                      potential of Artificial Intelligence.
+                    </p>
+
+                    <p>
+                      We navigate a time of information deluge, where technology
+                      unfurls infinite horizons yet simultaneously presents
+                      complexities of an unprecedented scale. We saw enterprises
+                      charting these new AI waters with a mix of aspiration and
+                      apprehension, and we felt the silent ache of AI's
+                      transformative power remaining partially latent, its full
+                      symphony yet to be conducted. It was then we resolved to
+                      become that <strong>vital nexus</strong>.
+                    </p>
+
+                    <p>
+                      Our collective is woven from the spirit of{" "}
+                      <strong>
+                        restless innovators and compassionate visionaries
+                      </strong>
+                      , individuals daring to dream beyond the conventional,
+                      eager to sculpt a better world. Each member contributes a
+                      unique thread – a distinct background, a specialized
+                      skill, a fresh perspective – yet we are unified by an
+                      unshakeable conviction: technology must be the handmaiden
+                      of human progress, not its shackle.
+                    </p>
+
+                    <p>
+                      In the realm of technological innovation, we are not
+                      content to rest on laurels. We understand that true
+                      innovation is not measured by lines of code or processing
+                      speed alone, but by the{" "}
+                      <strong>paradigms it shifts</strong>, the tangible
+                      problems it dissolves, and the positive change it
+                      orchestrates. Thus, our focus is laser-sharp: to engineer
+                      solutions that foster a more organic, profoundly efficient{" "}
+                      <strong>symbiosis</strong> between enterprise and AI.
+                    </p>
+
+                    <p>
+                      We stand at the threshold of discovery, eager to explore
+                      the uncharted territories of "what if" alongside you, to
+                      co-author a future that is not only more intelligent, but
+                      more intuitive, more empathetic, and ultimately, more{" "}
+                      <strong>profoundly human</strong>.
+                    </p>
+
+                    <p className="text-right font-semibold text-gray-800 pt-4">
+                      With earnest anticipation,
+                      <br />
+                      <strong>The Entire Team at Vector Parallel, Inc.</strong>
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Drawer Footer */}
+              <div className="p-6 border-t border-gray-200">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="w-full py-3 bg-gray-800 text-white font-mono 
+                           rounded-full hover:bg-gray-700 transition-colors duration-200"
+                >
+                  Close
+                </motion.button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
