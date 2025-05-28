@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vector Parallel, Inc. Website
 
-## Getting Started
+Vector Parallel 公司官方网站，采用现代化设计和流畅动画效果。
 
-First, run the development server:
+## 技术栈
+
+- **Next.js 15** - React 框架
+- **TypeScript** - 类型安全
+- **Tailwind CSS 4** - 样式框架
+- **Motion** - 动画库
+- **JetBrains Mono** - 等宽字体
+
+## 特性
+
+- 🎨 简洁优雅的设计
+- ✨ 流畅的动画效果
+- 📱 响应式布局
+- 🎯 侧边抽屉展示公司简介
+- ⚡ 快速加载和性能优化
+
+## 开发
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看网站。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 部署
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+推荐使用 [Vercel](https://vercel.com) 进行部署：
 
-## Learn More
+1. Fork 这个仓库
+2. 在 Vercel 中导入项目
+3. 自动部署完成
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© {new Date().getFullYear()} Vector Parallel, Inc.
